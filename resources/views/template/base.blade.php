@@ -56,7 +56,7 @@
                     </div>
                     <div class="profile_info">
                         <span>你好,</span>
-                        <h2>John Doe</h2>
+                        <h2>管理员</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -204,19 +204,19 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                <img src="images/img.jpg" alt="">管理员
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="javascript:;"> Profile</a></li>
+                                <li><a href="javascript:;"> 资料</a></li>
                                 <li>
                                     <a href="javascript:;">
                                         <span class="badge bg-red pull-right">50%</span>
-                                        <span>Settings</span>
+                                        <span>设置</span>
                                     </a>
                                 </li>
-                                <li><a href="javascript:;">Help</a></li>
-                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                <li><a href="javascript:;">帮助</a></li>
+                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> 登出</a></li>
                             </ul>
                         </li>
 
