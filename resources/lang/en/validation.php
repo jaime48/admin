@@ -101,9 +101,16 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'email' => [
+            'required' => '邮箱不能为空',
+            'unique' => '邮箱已被注册',
+            'email' => '邮箱不存在'
         ],
+        'password' => [
+            'required' => '密码不能为空',
+            'min' => '密码至少6位',
+            'confirmed' => '密码不一致'
+        ]
     ],
 
     /*
