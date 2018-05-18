@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,14 +12,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('template.index');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('test', function () {
-    return view('welcome1');
+    $data = \DB::connection('mysql')->select('select * from test');
+    print_r($data);
+    echo '</br>';
+    $data = \DB::connection('mysql2')->select('select * from test');
+    print_r($data);
+    return view('welcome');
 });
 
-Route::get('index1', function () {
-    return view('template.index1');
-});
+Route::get('contact', function () {
+    return view('template.contact.list');
+})->name('contact');
+
+
+
+Route::get('test_controller', 'TestController@test');
+
+Route::get('test_logout', 'TestController@logout');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
