@@ -55,6 +55,13 @@
                                     </span>
                         @endif
                     </div>
+                    <div class="form-group row">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> 记住我
+                                </label>
+                            </div>
+                    </div>
                     <div>
                         <button type="submit" class="btn btn-primary">登陆</button>
                         <a class="reset_pass" href="{{asset('password/reset')}}">忘记密码？</a>
