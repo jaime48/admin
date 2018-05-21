@@ -10,19 +10,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <link rel="icon" href="{{asset('img/template/logo.png')}}" type="image/ico" />
+    <title>{{ config('app.name') }} </title>
+
+
 
     <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{asset('vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- NProgress -->
-    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="{{asset('vendors/nprogress/nprogress.css')}}" rel="stylesheet">
     <!-- Animate.css -->
-    <link href="../vendors/animate.css/animate.min.css" rel="stylesheet">
+    <link href="{{asset('vendors/animate.css/animate.min.css')}}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="{{asset('build/css/custom.min.css')}}" rel="stylesheet">
 </head>
 
 <body class="login">
@@ -79,16 +82,16 @@
                     <div class="clearfix"></div>
 
                     <div class="separator">
-                        <p class="change_link">Already a member ?
-                            <a href="{{route('login')}}" class="to_register"> Log in </a>
+                        <p class="change_link">已注册 ?
+                            <a href="{{route('login')}}" class="to_register"> 登陆 </a>
                         </p>
 
                         <div class="clearfix"></div>
                         <br />
 
                         <div>
-                            <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                            <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                            <h1> <img src="{{asset('img/template/logo.png')}}" alt="..."  width="40" height="40"> {{config('app.name')}}</h1>
+                            <p> &copy; {{ date('Y') }} {{ config('app.name') }}保留所有权利.</p>
                         </div>
                     </div>
                 </form>

@@ -94,8 +94,9 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
-            'table' => 'password_resets',
+            'table' => 'test1.password_resets',
             'expire' => 60,
+            'connection' => 'mysql2'
         ],
     ],
 
