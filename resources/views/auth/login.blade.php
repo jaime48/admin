@@ -36,7 +36,7 @@
                     <h1>请登陆</h1>
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
-                        <input id="email" type="email" class="form-control" placeholder="Username" name="email" value="{{ old('email') }}" required autofocus>
+                        <input id="email" type="email" class="form-control" placeholder="邮箱" name="email" value="{{ old('email') }}" required autofocus>
 
                         @if ($errors->has('email'))
                             <span class="help-block">
@@ -47,7 +47,7 @@
 
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
-                        <input id="password" type="password" class="form-control" name="password" placeholder="password" required>
+                        <input id="password" type="password" class="form-control" name="password" placeholder="密码" required>
 
                         @if ($errors->has('password'))
                             <span class="help-block">

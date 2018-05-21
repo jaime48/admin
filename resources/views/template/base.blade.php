@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="{{asset('img/template/logo.png')}}" type="image/ico" />
 
-        <title> 融祥</title>
+        <title> {{config('app.name')}}</title>
 
         <!-- Bootstrap -->
         <link href="{{asset('vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -42,7 +42,7 @@
                 <div class="navbar nav_title" style="border: 0;">
                     <a href="index.blade.php" class="site_title">
                         <img src="{{asset('img/template/logo.png')}}" alt="..."  width="40" height="40">
-                        <span>融祥汽车</span>
+                        <span>{{config('app.name')}}</span>
 
                     </a>
                 </div>

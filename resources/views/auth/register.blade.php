@@ -40,9 +40,9 @@
             <section class="login_content">
                 <form method="POST" action="{{ route('register') }}">
                     {{ csrf_field() }}
-                    <h1>Create Account</h1>
+                    <h1>创建账户</h1>
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                        <input id="name" type="text" class="form-control" placeholder="name" name="name" value="{{ old('name') }}" required autofocus>
+                        <input id="name" type="text" class="form-control" placeholder="姓名" name="name" value="{{ old('name') }}" required autofocus>
                         @if ($errors->has('name'))
                             <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
-                        <input id="email" type="email" class="form-control" name="email" placeholder="email" value="{{ old('email') }}" required>
+                        <input id="email" type="email" class="form-control" name="email" placeholder="邮箱(用于登陆)" value="{{ old('email') }}" required>
 
                         @if ($errors->has('email'))
                             <span class="help-block">
@@ -60,7 +60,7 @@
                         @endif
                     </div>
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <input id="password" type="password" class="form-control" name="password" placeholder="password" required>
+                        <input id="password" type="password" class="form-control" name="password" placeholder="密码" required>
                         @if ($errors->has('password'))
                             <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -70,12 +70,12 @@
 
                     <div class="form-group">
 
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="confirm password" required>
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="确认密码" required>
                     </div>
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">
-                            Register
+                            注册
                         </button>
                     </div>
 
