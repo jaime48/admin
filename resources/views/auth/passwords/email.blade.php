@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
     <link rel="icon" href="{{asset('img/template/logo.png')}}" type="image/ico" />
     <title>{{ config('app.name') }} </title>
 
@@ -20,7 +19,6 @@
     <!-- Animate.css -->
     <link href="{{asset('vendors/animate.css/animate.min.css')}}" rel="stylesheet">
     <link href="{{asset('build/css/custom.min.css')}}" rel="stylesheet">
-
 
 </head>
 
@@ -67,12 +65,9 @@
                 </form>
             </section>
         </div>
-
-
     </div>
 </div>
 </body>
 </html>
 
-{{--@endsection--}}
 
