@@ -14,25 +14,25 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('test', function () {
-    $data = \DB::connection('mysql')->select('select * from test');
-    print_r($data);
-    echo '</br>';
-    $data = \DB::connection('mysql2')->select('select * from test');
-    print_r($data);
-    return view('welcome');
-});
-
-Route::get('contact', function () {
-    return view('template.contact.list');
-})->name('contact');
-
-
-
-Route::get('test_controller', 'TestController@test');
-
-Route::get('test_logout', 'TestController@logout');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('test', function () {
+//    $data = \DB::connection('mysql')->select('select * from test');
+//    print_r($data);
+//    echo '</br>';
+//    $data = \DB::connection('mysql2')->select('select * from test');
+//    print_r($data);
+//    return view('welcome');
+//});
+//
+//Route::get('contact', function () {
+//    return view('template.contact.index');
+//})->name('contact');
+//
+//Route::get('permission', 'User\UserController@index')->name('permission');
+//
+//Route::get('test_controller', 'TestController@test');
+//
+//Route::get('test_logout', 'TestController@logout');
+//
+//Auth::routes();
+//
+//Route::get('/home', 'HomeController@index')->name('home');

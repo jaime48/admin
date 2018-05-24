@@ -2,6 +2,7 @@
 <html lang="en">
 
 @section('head')
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Meta, title, CSS, favicons, etc. -->
@@ -77,7 +78,10 @@
                                         <li><a href="index3.html">Dashboard3</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{route('contact')}}"><i class="fa fa-group"></i> 联系人 </a>
+                                <li><a href="{{route('contact')}}"><i class="fa fa-comments"></i> 联系人 </a>
+
+                                </li>
+                                <li><a href="{{route('permission')}}"><i class="fa fa-group"></i> 授权用户 </a>
 
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> 表单 <span class="fa fa-chevron-down"></span></a>

@@ -22,6 +22,10 @@ class CheckPermission
         return $next($request);
     }
 
+    /**
+     * @param Request $request
+     * check permission on route
+     */
     public function routeCheck(Request $request) {
 
         if(array_key_exists($request->path(), config('permissionRoute'))){
