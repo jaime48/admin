@@ -30,6 +30,6 @@ class UserController extends Controller
             $user->permission_trans = config('permissionRole')[$user->permission];
         }
         //print_r($users);exit;
-        return view('template.user.permission.index', ['users' => $user]);
+        return view('template.user.permission.index', ['users' => $users]);
     }
 }
