@@ -32,4 +32,10 @@ class UserController extends Controller
         //print_r($users);exit;
         return view('template.user.permission.index', ['users' => $users]);
     }
+
+    public function update(Request $request, $user_id) {
+        User::where('id', '=', $user_id)
+            ->update(['permission' => $request->permission]);
+        return redirect('permission');
+    }
 }

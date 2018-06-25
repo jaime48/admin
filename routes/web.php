@@ -23,6 +23,8 @@ Route::get('test', function () {
     return view('welcome');
 });
 
+Route::any('user/update/{user_id}', 'User\UserController@update');
+
 Route::get('contact', function () {
     return view('template.contact.index');
 })->name('contact');

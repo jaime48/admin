@@ -27,10 +27,10 @@ class CheckPermission
      * check permission on route
      */
     public function routeCheck(Request $request) {
-
+        Log::info($request);
         if(array_key_exists($request->path(), config('permissionRoute'))){
             Log::info(config('permissionRoute')[$request->path()]);
-            Log::info($request->user()->permission);
+            Log::info($request->path());
             if($request->user()->permission > config('permissionRoute')[$request->path()]){
                 abort(403);
             }

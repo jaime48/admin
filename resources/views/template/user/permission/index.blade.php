@@ -14,8 +14,9 @@
     <link href="{{asset('vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css')}}" rel="stylesheet">
 
     {{--<!-- jQuery -->--}}
-    {{--<script src="{{asset('vendors/jquery/dist/jquery.min.js')}}"></script>--}}
+    <script src="{{asset('vendors/jquery/dist/jquery.min.js')}}"></script>
     {{--<!-- Bootstrap -->--}}
+    <script src={{asset('vendors/bootstrap/dist/js/bootstrap.min.js')}}></script>
     {{--<!-- FastClick -->--}}
     <script src="{{asset('vendors/fastclick/lib/fastclick.js')}}"></script>
     {{--<!-- NProgress -->--}}
@@ -39,42 +40,18 @@
     <script src="{{asset('vendors/pdfmake/build/vfs_fonts.js')}}"></script>
     <script src="{{asset('js/jquery.ba-replacetext.js')}}"></script>
 
-    <script>
-        $(document).ready(function(){
-            $('label').replaceText( /\bShow\b/gi, '显示' );
-            $('label').replaceText( /\bentries\b/gi, '条记录' );
-            $('label').replaceText( /\bSearch\b/gi, '搜索' );
 
-        })
-
-
-    </script>
 @endsection
 
 @section('main_content')
 
     <div class="right_col" role="main">
-        <div class="page-title">
-            <div class="title_left">
-                <h3>Users <small>Some examples to get you started</small></h3>
-            </div>
 
-            <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Default Example <small>Users</small></h2>
+                        <h2>授权用户</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -87,8 +64,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                            </li>
+
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -96,7 +72,7 @@
                         <p class="text-muted font-13 m-b-30">
                             仅超级管理员可以更改用户权限，如需授权请联系超管
                         </p>
-                        <table id="datatable" class="table table-striped table-bordered">
+                        <table id="datatable" class="table table-striped table-bordered" style=" overflow: visible;" >
                             <thead>
                             <tr>
                             <tr>
@@ -117,11 +93,24 @@
                                     <td>{{$user->permission_trans}}</td>
                                     <td>{{$user->created_at}}</td>
                                     <td>{{$user->updated_at}}</td>
-                                    <td></td>
+                                    <td>
+                                        @if(Auth::user()->permission == 0)
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                更改权限<span class="caret"></span>
+                                            </a>
+                                            <ul  class="dropdown-menu" role="menu">
+                                                @foreach(config('permissionRole') as $key=>$value)
+                                                    <li role="presentation">
+                                                        <a role="menuitem" tabindex="-1" href="user/update/{{$user->id}}?permission={{$key}}">{{$value}}</a>
+                                                    </li>
+                                                @endforeach
+
+                                            </ul>
+                                        @endif
+
+                                    </td>
                                 </tr>
                             @endforeach
-
-
 
 
                             </tbody>
@@ -132,10 +121,37 @@
         </div>
     </div>
 
-
 @endsection
 
+@section('custom')
 
+    <script>
+        $(document).ready(function(){
+            $('label').replaceText( /\bShow\b/gi, '显示' );
+            $('label').replaceText( /\bentries\b/gi, '条记录' );
+            $('label').replaceText( /\bSearch\b/gi, '搜索' );
+
+        })
+    </script>
+
+    <style>
+        #datatable{
+            overflow: visible;
+        }
+        td {
+            position: relative; /* <-- added declaration */
+        }
+        td ul{
+            position: relative;  /* <-- added declarations */
+        }
+        .dropdown-menu{
+            position:absolute;
+        }
+        div {
+            overflow: visible;
+        }
+    </style>
+@endsection
 
 
 
