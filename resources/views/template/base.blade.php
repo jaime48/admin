@@ -40,7 +40,8 @@
 <body class="nav-md">
 <div class="container body">
     <div class="main_container">
-        <div class="col-md-3 left_col">
+        <div class="col-md-3 left_col" style="position:fixed;overflow-y:auto;overflow-x:hidden;top: 0;
+    bottom:0;">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
                     <a href="index.blade.php" class="site_title">
