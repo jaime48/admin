@@ -38,3 +38,7 @@ Route::get('test_logout', 'TestController@logout');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('tables', function() {
+    return view('template.tables_dynamic');
+});
