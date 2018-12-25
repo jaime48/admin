@@ -74,13 +74,7 @@
                         <div class="menu_section">
                             <h3>综合</h3>
                             <ul class="nav side-menu">
-                                <li><a><i class="fa fa-home"></i> 综合面板 <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="index.blade.php">Dashboard</a></li>
-                                        <li><a href="index2.html">Dashboard2</a></li>
-                                        <li><a href="index3.html">Dashboard3</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="{{route('home')}}"><i class="fa fa-comments"></i> 主页 </a>
                                 <li><a href="{{route('contact')}}"><i class="fa fa-comments"></i> 联系人 </a>
 
                                 </li>
@@ -91,6 +85,9 @@
 
                                 </li>
                                 <li><a href="{{route('order')}}"><i class="fa fa-group"></i> 订单管理 </a>
+
+                                </li>
+                                <li><a href="{{route('payment')}}"><i class="fa fa-group"></i> 还款管理 </a>
 
                                 </li>
                                 {{--<li><a><i class="fa fa-edit"></i> 表单 <span class="fa fa-chevron-down"></span></a>--}}

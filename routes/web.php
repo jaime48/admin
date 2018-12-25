@@ -32,6 +32,7 @@ Route::get('contact', function () {
 Route::get('permission', 'User\UserController@index')->name('permission');
 Route::get('user', 'User\UserController@user')->name('user');
 Route::get('order', 'User\UserController@order')->name('order');
+Route::get('payment', 'User\UserController@payment')->name('payment');
 
 Route::get('test_controller', 'TestController@test');
 

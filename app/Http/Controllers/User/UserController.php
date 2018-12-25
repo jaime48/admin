@@ -57,4 +57,14 @@ class UserController extends Controller
         //print_r($users);exit;
         return view('template.order.index', ['users' => $users]);
     }
+
+
+    public function payment(Request $request) {
+        $users = User::all();
+        foreach($users as $user){
+            $user->permission_trans = config('permissionRole')[$user->permission];
+        }
+        //print_r($users);exit;
+        return view('template.payment.index', ['users' => $users]);
+    }
 }
