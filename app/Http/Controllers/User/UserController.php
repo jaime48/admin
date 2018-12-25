@@ -38,4 +38,23 @@ class UserController extends Controller
             ->update(['permission' => $request->permission]);
         return redirect('permission');
     }
+
+    public function user(Request $request) {
+        $users = User::all();
+        foreach($users as $user){
+            $user->permission_trans = config('permissionRole')[$user->permission];
+        }
+        //print_r($users);exit;
+        return view('template.user.user', ['users' => $users]);
+    }
+
+
+    public function order(Request $request) {
+        $users = User::all();
+        foreach($users as $user){
+            $user->permission_trans = config('permissionRole')[$user->permission];
+        }
+        //print_r($users);exit;
+        return view('template.order.index', ['users' => $users]);
+    }
 }
